@@ -4,8 +4,13 @@ import { Brain, Database, Code, ChartBar } from 'lucide-react';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-custom-dark-2">
-      <div className="section-container">
+    <section id="about" className="py-20 bg-custom-dark-2 relative overflow-hidden">
+      {/* Wavy colored background elements */}
+      <div className="absolute top-20 left-0 w-40 h-40 bg-blue-500/10 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      <div className="absolute bottom-20 right-10 w-60 h-60 bg-green-500/10 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      <div className="absolute top-1/2 right-1/4 w-40 h-40 bg-red-500/10 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      
+      <div className="section-container relative z-10">
         <h2 className="section-title">About Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -24,7 +29,7 @@ const AboutSection = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="glass-card p-6 flex flex-col items-center text-center">
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <Brain size={28} className="text-custom-purple" />
               </div>
@@ -32,7 +37,7 @@ const AboutSection = () => {
               <p className="text-gray-400 text-sm">Building predictive models that turn data into insights and decisions</p>
             </div>
             
-            <div className="glass-card p-6 flex flex-col items-center text-center">
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <Database size={28} className="text-custom-purple" />
               </div>
@@ -40,7 +45,7 @@ const AboutSection = () => {
               <p className="text-gray-400 text-sm">Creating scalable data pipelines and warehousing solutions</p>
             </div>
             
-            <div className="glass-card p-6 flex flex-col items-center text-center">
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <Code size={28} className="text-custom-purple" />
               </div>
@@ -48,7 +53,7 @@ const AboutSection = () => {
               <p className="text-gray-400 text-sm">Developing AI models that understand and generate human language</p>
             </div>
             
-            <div className="glass-card p-6 flex flex-col items-center text-center">
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <ChartBar size={28} className="text-custom-purple" />
               </div>

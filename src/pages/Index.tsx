@@ -48,6 +48,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-custom-dark text-white relative overflow-hidden">
+      {/* Additional wavy background elements */}
+      <div className="fixed top-[15%] left-[10%] w-60 h-60 bg-red-500/5 rounded-full filter blur-3xl opacity-20 animate-float-slow pointer-events-none"></div>
+      <div className="fixed bottom-[20%] right-[15%] w-80 h-80 bg-blue-500/5 rounded-full filter blur-3xl opacity-20 animate-float-slow pointer-events-none"></div>
+      <div className="fixed top-[50%] left-[50%] w-70 h-70 bg-green-500/5 rounded-full filter blur-3xl opacity-20 animate-float-slow pointer-events-none"></div>
+      
       <Navbar />
       <HeroSection />
       <AboutSection />

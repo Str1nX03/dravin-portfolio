@@ -23,7 +23,7 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Use EmailJS or a similar service to send the email
+      // Use FormSubmit.co service to send the email without backend
       const response = await fetch('https://formsubmit.co/ajax/dravin.ksharma@gmail.com', {
         method: 'POST',
         headers: {
@@ -59,8 +59,12 @@ const ContactSection = () => {
   };
   
   return (
-    <section id="contact" className="py-20 bg-custom-dark">
-      <div className="section-container">
+    <section id="contact" className="py-20 bg-custom-dark relative overflow-hidden">
+      {/* Add wavy effects for this section */}
+      <div className="absolute top-20 right-10 w-40 h-40 bg-red-500/10 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      <div className="absolute bottom-40 left-20 w-60 h-60 bg-blue-500/10 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      
+      <div className="section-container relative z-10">
         <h2 className="section-title">Get In Touch</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -151,7 +155,7 @@ const ContactSection = () => {
             </div>
           </div>
           
-          <div className="glass-card p-6">
+          <div className="glass-card p-6 hover:shadow-lg hover:shadow-custom-purple/20 transition-all duration-300">
             <h3 className="text-xl font-semibold mb-6 text-center">Send Me a Message</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
