@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 interface Skill {
@@ -9,17 +8,15 @@ interface Skill {
 
 const skills: Skill[] = [
   { name: 'Python', proficiency: 95, category: 'Programming' },
-  { name: 'TensorFlow', proficiency: 90, category: 'Machine Learning' },
-  { name: 'PyTorch', proficiency: 85, category: 'Machine Learning' },
-  { name: 'Scikit-Learn', proficiency: 90, category: 'Machine Learning' },
-  { name: 'Pandas/NumPy', proficiency: 95, category: 'Data Analysis' },
   { name: 'SQL', proficiency: 85, category: 'Database' },
-  { name: 'Data Visualization', proficiency: 80, category: 'Data Analysis' },
-  { name: 'MLOps', proficiency: 75, category: 'Operations' },
-  { name: 'Docker', proficiency: 80, category: 'DevOps' },
-  { name: 'Cloud Services (AWS/GCP)', proficiency: 75, category: 'Cloud' },
-  { name: 'JavaScript/React', proficiency: 70, category: 'Web Development' },
-  { name: 'Natural Language Processing', proficiency: 85, category: 'Machine Learning' },
+  { name: 'LangChain', proficiency: 90, category: 'AI Framework' },
+  { name: 'Natural Language Processing', proficiency: 88, category: 'Machine Learning' },
+  { name: 'Communication', proficiency: 92, category: 'Soft Skills' },
+  { name: 'PyTorch', proficiency: 90, category: 'Deep Learning' },
+  { name: 'Deep Learning', proficiency: 85, category: 'Machine Learning' },
+  { name: 'GitHub', proficiency: 88, category: 'Version Control' },
+  { name: 'Flask', proficiency: 85, category: 'Web Framework' },
+  { name: 'Scikit-Learn', proficiency: 90, category: 'Machine Learning' },
 ];
 
 const SkillsSection = () => {
@@ -89,12 +86,10 @@ const SkillsSection = () => {
         </div>
         
         <div className="mt-16 p-6 glass-card text-center">
-          <h3 className="text-xl font-semibold mb-4">Additional Expertise</h3>
+          <h3 className="text-xl font-semibold mb-4">Tech Stack</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'Computer Vision', 'Big Data', 'A/B Testing', 'Deep Learning',
-              'Feature Engineering', 'Data Cleaning', 'Model Deployment',
-              'Time Series Analysis', 'Reinforcement Learning', 'Statistical Analysis'
+              'PyTorch', 'LangChain', 'Flask', 'Scikit-Learn'
             ].map((tag) => (
               <span 
                 key={tag} 

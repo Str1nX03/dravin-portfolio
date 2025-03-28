@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,29 +12,50 @@ const ContactSection = () => {
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', message: '' });
+    try {
+      // Use EmailJS or a similar service to send the email
+      const response = await fetch('https://formsubmit.co/ajax/dravin.ksharma@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        })
+      });
       
-      // Reset success message after a few seconds
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
-    }, 1500);
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you! I'll get back to you soon.",
+          variant: "default",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   return (
@@ -54,8 +77,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-white">Email</h3>
-                  <a href="mailto:contact@example.com" className="text-gray-400 hover:text-custom-purple transition-colors duration-300">
-                    contact@example.com
+                  <a href="mailto:dravin.ksharma@gmail.com" className="text-gray-400 hover:text-custom-purple transition-colors duration-300">
+                    dravin.ksharma@gmail.com
                   </a>
                 </div>
               </div>
@@ -66,7 +89,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-white">Location</h3>
-                  <p className="text-gray-400">San Francisco, California</p>
+                  <p className="text-gray-400">Bhilai, Chhattisgarh, India</p>
                 </div>
               </div>
               
@@ -77,12 +100,12 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-lg font-medium text-white">GitHub</h3>
                   <a 
-                    href="https://github.com/username" 
+                    href="https://github.com/Str1nX03" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-custom-purple transition-colors duration-300"
                   >
-                    github.com/username
+                    github.com/Str1nX03
                   </a>
                 </div>
               </div>
@@ -94,12 +117,12 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-lg font-medium text-white">LinkedIn</h3>
                   <a 
-                    href="https://linkedin.com/in/username" 
+                    href="https://www.linkedin.com/in/dravin-kumar-sharma-b495341b5/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-custom-purple transition-colors duration-300"
                   >
-                    linkedin.com/in/username
+                    linkedin.com/in/dravin-kumar-sharma-b495341b5/
                   </a>
                 </div>
               </div>
@@ -109,7 +132,7 @@ const ContactSection = () => {
               <h3 className="text-lg font-medium text-white mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/username" 
+                  href="https://github.com/Str1nX03" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 bg-custom-dark-3 rounded-full text-gray-400 hover:text-custom-purple hover:bg-custom-dark-2 transition-all duration-300"
@@ -117,20 +140,12 @@ const ContactSection = () => {
                   <Github size={20} />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/username" 
+                  href="https://www.linkedin.com/in/dravin-kumar-sharma-b495341b5/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 bg-custom-dark-3 rounded-full text-gray-400 hover:text-custom-purple hover:bg-custom-dark-2 transition-all duration-300"
                 >
                   <Linkedin size={20} />
-                </a>
-                <a 
-                  href="https://twitter.com/username" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-3 bg-custom-dark-3 rounded-full text-gray-400 hover:text-custom-purple hover:bg-custom-dark-2 transition-all duration-300"
-                >
-                  <Twitter size={20} />
                 </a>
               </div>
             </div>
@@ -202,18 +217,6 @@ const ContactSection = () => {
                     </>
                   )}
                 </button>
-                
-                {submitSuccess && (
-                  <div className="mt-4 p-3 bg-green-500/20 border border-green-500/30 rounded-lg text-green-400 text-center">
-                    Thank you! Your message has been sent successfully.
-                  </div>
-                )}
-                
-                {submitError && (
-                  <div className="mt-4 p-3 bg-red-500/20 border border-red-500/30 rounded-lg text-red-400 text-center">
-                    There was an error sending your message. Please try again.
-                  </div>
-                )}
               </div>
             </form>
           </div>

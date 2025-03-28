@@ -11,17 +11,15 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              I'm a passionate Machine Learning Engineer and Data Scientist with 5+ years of experience in developing
-              and deploying AI solutions across various domains including finance, healthcare, and e-commerce.
+              Results-driven Machine Learning Engineer with 3 months of experience, skilled in machine learning, 
+              deep learning, and hands-on expertise with PyTorch and Scikit-Learn.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6">
-              My journey in the field of AI began during my Master's program, where I focused on deep learning
-              applications for computer vision. Since then, I've worked with numerous organizations to leverage
-              data-driven insights and build intelligent systems.
+              Proficient in building AI-powered applications and intelligent agents using Flask and LangChain 
+              with passive skills in prompt engineering, integrating automation and real-time interactions.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              When I'm not training models or analyzing data, you can find me contributing to open-source
-              projects, mentoring aspiring data scientists, or exploring the latest research in AI ethics.
+              Passionate about developing scalable, high-performance AI solutions to drive efficiency and innovation.
             </p>
           </div>
           
@@ -46,16 +44,16 @@ const AboutSection = () => {
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <Code size={28} className="text-custom-purple" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Software Development</h3>
-              <p className="text-gray-400 text-sm">Building maintainable and efficient applications with clean code</p>
+              <h3 className="text-xl font-semibold mb-2">Natural Language Processing</h3>
+              <p className="text-gray-400 text-sm">Developing AI models that understand and generate human language</p>
             </div>
             
             <div className="glass-card p-6 flex flex-col items-center text-center">
               <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
                 <ChartBar size={28} className="text-custom-purple" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Data Visualization</h3>
-              <p className="text-gray-400 text-sm">Creating compelling visual narratives from complex datasets</p>
+              <h3 className="text-xl font-semibold mb-2">Deep Learning</h3>
+              <p className="text-gray-400 text-sm">Creating sophisticated neural networks for complex AI tasks</p>
             </div>
           </div>
         </div>
