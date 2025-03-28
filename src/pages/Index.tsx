@@ -26,7 +26,7 @@ const Index = () => {
       });
     });
     
-    // Optional: Reveal animations on scroll
+    // Reveal animations on scroll
     const revealElements = document.querySelectorAll('.animate-fade-in');
     
     const handleReveal = () => {
@@ -47,7 +47,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-custom-dark text-white">
+    <div className="min-h-screen bg-custom-dark text-white relative overflow-hidden">
       <Navbar />
       <HeroSection />
       <AboutSection />

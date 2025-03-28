@@ -35,3 +35,145 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #7C3AED;
 }
+
+/* Wavy background elements */
+.wavy-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+  opacity: 0.2;
+}
+
+.wavy-bg::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 30%;
+  height: 40%;
+  background: radial-gradient(ellipse at center, #ea384c 0%, rgba(234, 56, 76, 0) 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float-slow 15s ease-in-out infinite alternate;
+}
+
+.wavy-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  width: 25%;
+  height: 35%;
+  background: radial-gradient(ellipse at center, #4cc9f0 0%, rgba(76, 201, 240, 0) 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float-slow 18s ease-in-out infinite alternate-reverse;
+}
+
+/* Green wavy effect */
+.section-container::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  right: -10%;
+  width: 40%;
+  height: 50%;
+  background: radial-gradient(ellipse at center, #4ade80 0%, rgba(74, 222,, 0) 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.2;
+  animation: morph 15s ease-in-out infinite;
+}
+
+/* White wavy effect */
+.section-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: 15%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.15;
+  animation: morph 20s ease-in-out infinite reverse;
+}
+
+@keyframes float-slow {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(5%, 5%) rotate(5deg);
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 40% 60% 30% 70% / 50% 60% 40% 60%;
+  }
+  100% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+}
+
+/* Add some additional wavy effects to other sections */
+#about, #skills, #projects, #contact {
+  position: relative;
+  overflow: hidden;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 35%;
+  height: 40%;
+  background: radial-gradient(ellipse at center, rgba(234, 56, 76, 0.5) 0%, rgba(234, 56, 76, 0) 70%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  filter: blur(70px);
+  z-index: -1;
+  opacity: 0.1;
+  animation: morph 25s ease-in-out infinite alternate;
+}
+
+#skills::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 30%;
+  height: 40%;
+  background: radial-gradient(ellipse at center, rgba(76, 201, 240, 0.5) 0%, rgba(76, 201, 240, 0) 70%);
+  border-radius: 50% 50% 30% 70% / 50% 50% 70% 60%;
+  filter: blur(50px);
+  z-index: -1;
+  opacity: 0.15;
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+#projects::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 25%;
+  height: 35%;
+  background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.5) 0%, rgba(74, 222, 128, 0) 70%);
+  border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.1;
+  animation: morph 22s ease-in-out infinite reverse;
+}

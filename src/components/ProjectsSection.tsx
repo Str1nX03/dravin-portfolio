@@ -16,61 +16,32 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Customer Churn Prediction',
-    description: 'A machine learning model to predict customer churn for a telecom company, with 93% accuracy using ensemble methods.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format',
-    tags: ['Python', 'Scikit-Learn', 'XGBoost', 'Pandas'],
-    category: ['Machine Learning', 'Data Science'],
-    github: 'https://github.com/username/churn-prediction',
-    demo: 'https://example.com/demo1',
+    title: 'Queska AI',
+    description: 'A project where users can upload a syllabus and receive a generated question paper based on that syllabus with various difficulty levels.',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format',
+    tags: ['AI', 'NLP', 'React', 'NextJS'],
+    category: ['AI', 'NLP'],
+    github: 'https://github.com/Str1nX03/Queska-AI',
+    demo: 'https://queska-ai.vercel.app/',
   },
   {
     id: 2,
-    title: 'Sentiment Analysis API',
-    description: 'Real-time sentiment analysis API for social media comments using BERT, deployed with FastAPI and Docker.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format',
-    tags: ['PyTorch', 'BERT', 'NLP', 'FastAPI', 'Docker'],
-    category: ['NLP', 'API', 'Machine Learning'],
-    github: 'https://github.com/username/sentiment-api',
+    title: 'DataPrep',
+    description: 'A project where users can upload a dataset and the model will pre-process it by applying dropping/imputing, onehot encoding, label encoding, etc., and return the pre-processed dataset.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format',
+    tags: ['Machine Learning', 'Python', 'Data Processing'],
+    category: ['Data Science', 'Machine Learning'],
+    github: 'https://github.com/Str1nX03/DataPrep',
+    demo: 'https://dataprep-yu1h.onrender.com/',
   },
   {
     id: 3,
-    title: 'Image Classification Model',
-    description: 'A deep learning model for classifying medical images, with a custom CNN architecture optimized for deployment on edge devices.',
+    title: 'TrainiFy (In Development)',
+    description: 'A project that takes a dataset from the user, identifies the problem type, performs K-Fold Cross Validation, and trains a Machine Learning model using the best possible algorithm for that specific dataset.',
     image: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1000&auto=format',
-    tags: ['TensorFlow', 'CNN', 'Computer Vision', 'Edge ML'],
-    category: ['Computer Vision', 'Machine Learning'],
-    github: 'https://github.com/username/medical-image-classifier',
-    demo: 'https://example.com/demo2',
-  },
-  {
-    id: 4,
-    title: 'Data Visualization Dashboard',
-    description: 'Interactive dashboard for COVID-19 data analysis, featuring real-time updates and geographic visualizations.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format',
-    tags: ['D3.js', 'React', 'Python', 'Flask', 'Mapbox'],
-    category: ['Data Visualization', 'Web Development'],
-    github: 'https://github.com/username/covid-dashboard',
-    demo: 'https://example.com/demo3',
-  },
-  {
-    id: 5,
-    title: 'Recommendation System',
-    description: 'Collaborative filtering recommendation system for an e-commerce platform, increasing user engagement by 27%.',
-    image: 'https://images.unsplash.com/photo-1580894742597-87bc8789db3d?q=80&w=1000&auto=format',
-    tags: ['Python', 'Surprise', 'SQL', 'AWS', 'Redis'],
+    tags: ['Machine Learning', 'Cross Validation', 'Python', 'Model Selection'],
     category: ['Machine Learning', 'Data Science'],
-    github: 'https://github.com/username/recommendation-system',
-  },
-  {
-    id: 6,
-    title: 'Time Series Forecasting',
-    description: 'LSTM-based forecasting model for stock prices, with feature engineering for external economic indicators.',
-    image: 'https://images.unsplash.com/photo-1590283603385-c5e24a6751a6?q=80&w=1000&auto=format',
-    tags: ['TensorFlow', 'LSTM', 'Time Series', 'Finance'],
-    category: ['Deep Learning', 'Time Series'],
-    github: 'https://github.com/username/stock-forecasting',
-    demo: 'https://example.com/demo4',
+    github: 'https://github.com/Str1nX03/TrainiFy',
   },
 ];
 
@@ -78,11 +49,8 @@ const categories = [
   'All',
   'Machine Learning',
   'Data Science',
-  'Computer Vision',
+  'AI',
   'NLP',
-  'Deep Learning',
-  'Data Visualization',
-  'Web Development',
 ];
 
 const ProjectsSection = () => {
@@ -186,7 +154,7 @@ const ProjectsSection = () => {
         
         <div className="text-center mt-10">
           <a
-            href="https://github.com/username"
+            href="https://github.com/Str1nX03"
             target="_blank"
             rel="noopener noreferrer"
             className="button-outline inline-flex items-center"
