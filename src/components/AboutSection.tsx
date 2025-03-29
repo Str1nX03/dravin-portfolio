@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Brain, Database, Code, ChartBar } from 'lucide-react';
+import { Brain, Database, Code, ChartBar, Rocket, Zap } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -14,17 +14,25 @@ const AboutSection = () => {
         <h2 className="section-title">About Me</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Results-driven Machine Learning Engineer with 3 months of experience, skilled in machine learning, 
-              deep learning, and hands-on expertise with PyTorch and Scikit-Learn.
-            </p>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Proficient in building AI-powered applications and intelligent agents using Flask and LangChain 
-              with passive skills in prompt engineering, integrating automation and real-time interactions.
+          <div className="space-y-6">
+            <p className="text-gray-300 leading-relaxed">
+              Results-driven Machine Learning Engineer with 3 months of experience, specializing in developing 
+              intelligent solutions that solve real-world problems. My expertise lies in machine learning, deep learning, 
+              and natural language processing, with hands-on proficiency in PyTorch and Scikit-Learn.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Passionate about developing scalable, high-performance AI solutions to drive efficiency and innovation.
+              Throughout my journey, I've focused on building AI-powered applications and intelligent agents using 
+              Flask and LangChain. I've developed a strong foundation in prompt engineering, enabling me to create 
+              systems that effectively understand and respond to user needs.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              My approach combines technical expertise with creative problem-solving to develop AI solutions 
+              that are not only technically sound but also practical and intuitive for end-users.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              I'm particularly passionate about advancing the field of NLP and creating AI systems that can 
+              understand and generate human-like text. My goal is to contribute to the development of AI 
+              technologies that enhance human capabilities rather than replace them.
             </p>
           </div>
           
@@ -59,6 +67,22 @@ const AboutSection = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Deep Learning</h3>
               <p className="text-gray-400 text-sm">Creating sophisticated neural networks for complex AI tasks</p>
+            </div>
+
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
+              <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
+                <Rocket size={28} className="text-custom-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">AI Applications</h3>
+              <p className="text-gray-400 text-sm">Building end-to-end AI solutions for practical use cases</p>
+            </div>
+            
+            <div className="glass-card p-6 flex flex-col items-center text-center hover:translate-y-[-5px] transition-transform duration-300">
+              <div className="p-3 rounded-full bg-custom-purple/10 mb-4">
+                <Zap size={28} className="text-custom-purple" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Prompt Engineering</h3>
+              <p className="text-gray-400 text-sm">Crafting effective prompts to enhance AI systems' performance</p>
             </div>
           </div>
         </div>
