@@ -36,12 +36,13 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'TrainiFy (In Development)',
+    title: 'TrainiFy',
     description: 'A project that takes a dataset from the user, identifies the problem type, performs K-Fold Cross Validation, and trains a Machine Learning model using the best possible algorithm for that specific dataset.',
     image: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1000&auto=format',
     tags: ['Machine Learning', 'Cross Validation', 'Python', 'Model Selection'],
     category: ['Machine Learning', 'Data Science'],
     github: 'https://github.com/Str1nX03/TrainiFy',
+    demo: 'https://trainify.onrender.com/', // Added deployed link
   },
 ];
 
